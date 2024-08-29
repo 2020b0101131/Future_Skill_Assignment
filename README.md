@@ -1,6 +1,7 @@
 # PROJECT OVERVIEW
 
-https://github.com/user-attachments/assets/4849df4f-d540-4daa-b056-a43da2de5ba9
+
+https://github.com/user-attachments/assets/db85df1b-cd88-4951-8acc-c2935c16780f
 
 I have created this project using technology including React.js, Material UI, Express.js, Node.js, MongoDB (Database).<br><br>
 
