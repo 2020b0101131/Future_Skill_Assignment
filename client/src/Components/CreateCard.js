@@ -14,6 +14,8 @@ import {
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import * as yup from "yup";
+import Notify from 'simple-notify'
+import 'simple-notify/dist/simple-notify.css'
 
 
 
@@ -70,19 +72,22 @@ const CreateCard = () => {
             postData
           )
           .then((response) => {
-            if (response.data.statusCode === 200) {
+       
+            if (response.data.statusCode === 201) {
               setBtnText("Saving");
-              alert("Card successfully created");
+              new Notify({
+                status: 'success',
+                text: response.data.message,
+                effect: 'slide',
+              });
               formik.resetForm();
            
             } else {
-              // showSnackbar(, "error");
+             console.log("Response is not 201");
             }
           })
           .catch((error) => {
-            // showSnackbar(
-            //   
-            // );
+            console.log("Error in create api")
           })
           .finally(() => {
             setBtnText("Save");

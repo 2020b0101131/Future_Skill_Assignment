@@ -18,15 +18,33 @@ mongoose.connect('mongodb://localhost:27017/helpcenter', {
 });
 
 
+// app.post('/cards', async (req, res) => {
+//   const { title, description } = req.body;
+
+//   try {
+//     const newCard = new Card({ title, description });
+//     await newCard.save();
+//     res.status(201).json(newCard);
+//   } catch (error) {
+//     res.status(500).json({ error: 'Error creating card' });
+//   }
+// });
 app.post('/cards', async (req, res) => {
   const { title, description } = req.body;
 
   try {
     const newCard = new Card({ title, description });
     await newCard.save();
-    res.status(201).json(newCard);
+    res.status(201).json({
+      statusCode: 201,
+      message: 'Card created successfully',
+      card: newCard
+    });
   } catch (error) {
-    res.status(500).json({ error: 'Error creating card' });
+    res.status(500).json({
+      statusCode: 500,
+      error: 'Error creating card'
+    });
   }
 });
 
