@@ -123,7 +123,7 @@ const HelpCenter = () => {
           sx={{
             mt: { lg: "40px", sm: "30px" },
             px: { xs: 2 },
-            mb: { lg: "1rem", xs: "3rem" },
+            mb: { lg: "3rem", xs: "3rem" },
           
           }}
         >
@@ -139,7 +139,7 @@ const HelpCenter = () => {
                     backgroundColor: "#EEEDEB",
                     border: "1px solid lightgray",
                     borderRadius: "8px",
-                    marginBottom: { lg: "4.5rem", sm: "2rem" },
+                    marginBottom: { lg: "1.8rem", sm: "2rem" },
                     marginTop: "2.8rem",
                   }}
                 >
