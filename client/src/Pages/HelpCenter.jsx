@@ -119,12 +119,20 @@ const HelpCenter = () => {
         <Grid
           container
           columnSpacing={9}
-          offset={2}
+          // offset={2}
+          // sx={{
+          //   mt: { lg: "40px", sm: "30px" },
+          //   px: { xs: 2 },
+          //   mb: { lg: "3rem", xs: "3rem" },
+          
+          // }}
           sx={{
             mt: { lg: "40px", sm: "30px" },
             px: { xs: 2 },
             mb: { lg: "3rem", xs: "3rem" },
-          
+            mx: { lg: 'auto' }, 
+            maxWidth: { lg: 'calc(100% - 28rem)', xs: '100%' }, 
+            justifyContent:"center"
           }}
         >
           {Array.isArray(cards) ? (
