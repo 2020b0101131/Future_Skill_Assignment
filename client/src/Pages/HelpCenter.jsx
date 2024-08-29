@@ -31,7 +31,6 @@ const HelpCenter = () => {
     setOpen(false);
   };
 
-
   useEffect(() => {
     const fetchCards = async () => {
       try {
@@ -52,37 +51,32 @@ const HelpCenter = () => {
 
   return (
     <div>
-
       <AppBar
         style={{ color: "white", backgroundColor: "black" }}
         position="static"
       >
-        
-        
         <Toolbar style={{ justifyContent: "space-between" }}>
-  <Box display="flex" alignItems="center">
-    <img 
-      src={logo} 
-      alt="Company Logo" 
-      style={{ width: '30px', height: 'auto', marginRight: '4px' }} 
-    />
-    <Typography sx={{ fontSize: "18px", fontFamily: "sans-serif" }}>
-      Abstract | Help Center
-    </Typography>
-  </Box>
-  <Button
-    style={{ fontFamily: "sans-serif" }}
-    variant="outlined"
-    onClick={handleClickOpen}
-    color="inherit"
-  >
-    Submit a request
-  </Button>
-</Toolbar>
-
+          <Box display="flex" alignItems="center">
+            <img
+              src={logo}
+              alt="Company Logo"
+              style={{ width: "30px", height: "auto", marginRight: "4px" }}
+            />
+            <Typography sx={{ fontSize: "18px", fontFamily: "sans-serif" }}>
+              Abstract | Help Center
+            </Typography>
+          </Box>
+          <Button
+            style={{ fontFamily: "sans-serif" }}
+            variant="outlined"
+            onClick={handleClickOpen}
+            color="inherit"
+          >
+            Submit a request
+          </Button>
+        </Toolbar>
       </AppBar>
 
-   
       <div
         style={{
           backgroundColor: "#EBD3F8",
@@ -107,153 +101,226 @@ const HelpCenter = () => {
 
       <div
         style={{
-       
           textAlign: "center",
           display: "flex",
           justifyContent: "center",
         }}
       >
-     
         <Grid
-  container
-  columnSpacing={9}
-  sx={{
-    mt: { lg: "40px", sm: "30px" },
-    px: { xs: 2 },
-    mb: { lg: "3rem", xs: "3rem" },
-    mx: { lg: 'auto' }, 
-    maxWidth: { lg: 'calc(100% - 28rem)', xs: '100%' }, 
-    justifyContent: { xs: 'center', sm: 'flex-start' }, 
-  }}
->
-  {Array.isArray(cards) ? (
-    cards.map((card, index) => (
-      <Grid item xs={12} sm={6} md={6} lg={6} xl={6} key={index}>
-        <Paper
+          container
+          columnSpacing={9}
           sx={{
-            padding: "20px",
-            textAlign: "left",
-            width: { lg: "20rem", xs: "15rem" },
-            height: "7rem",
-            backgroundColor: "#EEEDEB",
-            border: "1px solid lightgray",
-            borderRadius: "8px",
-            marginBottom: { lg: "1.8rem", sm: "2rem" },
-            marginTop: "2.8rem",
+            mt: { lg: "40px", sm: "30px" },
+            px: { xs: 2 },
+            mb: { lg: "3rem", xs: "3rem" },
+            mx: { lg: "auto" },
+            maxWidth: { lg: "calc(100% - 28rem)", xs: "100%" },
+            justifyContent: { xs: "center", sm: "flex-start" },
           }}
         >
-          <Typography
-            style={{
-              fontWeight: "bold",
-              fontSize: "18px",
-              marginTop: "-3%",
-              marginBottom: "1%",
-              fontFamily: "sans-serif",
-            }}
-          >
-            {card.title}
-          </Typography>
-          <Divider
-            style={{
-              backgroundColor: "lightgray",
-              marginLeft: "-6%",
-              marginRight: "-6%",
-            }}
-          />
+          {Array.isArray(cards) ? (
+            cards.map((card, index) => (
+              <Grid item xs={12} sm={6} md={6} lg={6} xl={6} key={index}>
+                <Paper
+                  sx={{
+                    padding: "20px",
+                    textAlign: "left",
+                    width: { lg: "20rem", xs: "15rem" },
+                    height: "7rem",
+                    backgroundColor: "#EEEDEB",
+                    border: "1px solid lightgray",
+                    borderRadius: "8px",
+                    marginBottom: { lg: "1.8rem", sm: "2rem" },
+                    marginTop: "2.8rem",
+                  }}
+                >
+                  <Typography
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "-3%",
+                      marginBottom: "1%",
+                      fontFamily: "sans-serif",
+                    }}
+                  >
+                    {card.title}
+                  </Typography>
+                  <Divider
+                    style={{
+                      backgroundColor: "lightgray",
+                      marginLeft: "-6%",
+                      marginRight: "-6%",
+                    }}
+                  />
 
-          <Typography
-            style={{ marginTop: "4px", fontFamily: "sans-serif" }}
-          >
-            {card.description}
-          </Typography>
-        </Paper>
-      </Grid>
-    ))
-  ) : (
-    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-      <Paper
-        style={{
-          padding: "20px",
-          textAlign: "left",
-          width: "20rem",
-          height: "7rem",
-          backgroundColor: "#EEEDEB",
-          border: "1px solid lightgray",
-          borderRadius: "8px",
-          marginBottom: "4.5rem",
-          marginTop: "2.8rem",
-        }}
-      >
-        <Typography
-          style={{
-            fontWeight: "bold",
-            fontSize: "18px",
-            marginTop: "-3%",
-            marginBottom: "1%",
-          }}
-        >
-          {cards.title}
-        </Typography>
-        <Divider
-          style={{
-            backgroundColor: "lightgray",
-            marginLeft: "-6%",
-            marginRight: "-6%",
-          }}
-        />
+                  <Typography
+                    style={{ marginTop: "4px", fontFamily: "sans-serif" }}
+                  >
+                    {card.description}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))
+          ) : (
+            <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+              <Paper
+                style={{
+                  padding: "20px",
+                  textAlign: "left",
+                  width: "20rem",
+                  height: "7rem",
+                  backgroundColor: "#EEEDEB",
+                  border: "1px solid lightgray",
+                  borderRadius: "8px",
+                  marginBottom: "4.5rem",
+                  marginTop: "2.8rem",
+                }}
+              >
+                <Typography
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    marginTop: "-3%",
+                    marginBottom: "1%",
+                  }}
+                >
+                  {cards.title}
+                </Typography>
+                <Divider
+                  style={{
+                    backgroundColor: "lightgray",
+                    marginLeft: "-6%",
+                    marginRight: "-6%",
+                  }}
+                />
 
-        <Typography>{cards.description}</Typography>
-      </Paper>
-    </Grid>
-  )}
-</Grid>
-
-       
+                <Typography>{cards.description}</Typography>
+              </Paper>
+            </Grid>
+          )}
+        </Grid>
       </div>
 
- 
       <footer
         style={{ backgroundColor: "#000", color: "#fff", padding: "20px" }}
       >
-        <Grid container spacing={15} sx={{display:"flex",justifyContent:"center"}} mt={2}>
+        <Grid
+          container
+          spacing={15}
+          sx={{ display: "flex", justifyContent: "center" }}
+          mt={2}
+        >
           <Grid item xs={12} sm={4}>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"16px",fontWeight:"bold"}}>Abstract</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Branches</Typography>
+            <Typography
+              style={{
+                fontFamily: "sans-serif",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Abstract
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Branches
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"16px",fontWeight:"bold"}}>Resources</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Blog</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Help Center</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Release Notes</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Status</Typography>
+            <Typography
+              style={{
+                fontFamily: "sans-serif",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Resources
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Blog
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Help Center
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Release Notes
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Status
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"16px",fontWeight:"bold"}}>Community</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Twitter</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>LinkedIn</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Facebook</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Dribbble</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Podcast</Typography>
+            <Typography
+              style={{
+                fontFamily: "sans-serif",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Community
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Twitter
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              LinkedIn
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Facebook
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Dribbble
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Podcast
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"16px",fontWeight:"bold"}}>Company</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>About Us</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Careers</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Legal</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px",fontWeight:"bold",marginTop:"15%"}}>Contact Us</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>info@abstract.com</Typography>
+            <Typography
+              style={{
+                fontFamily: "sans-serif",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Company
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              About Us
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Careers
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Legal
+            </Typography>
+            <Typography
+              style={{
+                fontFamily: "sans-serif",
+                fontSize: "14px",
+                fontWeight: "bold",
+                marginTop: "15%",
+              }}
+            >
+              Contact Us
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              info@abstract.com
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={4} mt={13.3}>
-           
-           
-            <img 
-        src={logo} 
-        alt="Company Logo" 
-        style={{ width: '25px', height: 'auto',marginLeft:"-4px" }} 
-    />
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>© Copyright 2022</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>Abstract Studio Design, Inc.</Typography>
-            <Typography style={{fontFamily:"sans-serif",fontSize:"14px"}}>All rights reserved</Typography>
+            <img
+              src={logo}
+              alt="Company Logo"
+              style={{ width: "25px", height: "auto", marginLeft: "-4px" }}
+            />
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              © Copyright 2022
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              Abstract Studio Design, Inc.
+            </Typography>
+            <Typography style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
+              All rights reserved
+            </Typography>
           </Grid>
         </Grid>
       </footer>
@@ -287,7 +354,27 @@ const HelpCenter = () => {
           <CreateCard />
         </DialogContent>
         <DialogActions>
-          <Button style={{ color: "black" }} onClick={handleClose} autoFocus>
+          <Button
+            style={{ color: "black" }}
+            onClick={() => {
+              const fetchDetails = async () => {
+                try {
+                  const response = await axios.post(
+                    `${process.env.REACT_APP_API_URL}/getcards`,
+                    {
+                      title: null,
+                    }
+                  );
+                  setCards(response.data);
+                } catch (error) {
+                  console.error("Error fetching cards:", error);
+                }
+              };
+              handleClose();
+              fetchDetails();
+            }}
+            autoFocus
+          >
             Close
           </Button>
         </DialogActions>
