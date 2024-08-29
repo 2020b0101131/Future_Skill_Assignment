@@ -18,8 +18,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import CreateCard from "../Components/CreateCard";
 import logo from "../img/sitelogo.png";
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
 const HelpCenter = () => {
   const [cards, setCards] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -54,7 +52,7 @@ const HelpCenter = () => {
 
   return (
     <div>
-      {/* Header Section */}
+
       <AppBar
         style={{ color: "white", backgroundColor: "black" }}
         position="static"
@@ -84,7 +82,7 @@ const HelpCenter = () => {
 
       </AppBar>
 
-      {/* Main Content */}
+   
       <div
         style={{
           backgroundColor: "#EBD3F8",
@@ -115,110 +113,105 @@ const HelpCenter = () => {
           justifyContent: "center",
         }}
       >
-        {/* Grid of Options */}
+     
         <Grid
-          container
-          columnSpacing={9}
-          // offset={2}
-          // sx={{
-          //   mt: { lg: "40px", sm: "30px" },
-          //   px: { xs: 2 },
-          //   mb: { lg: "3rem", xs: "3rem" },
-          
-          // }}
+  container
+  columnSpacing={9}
+  sx={{
+    mt: { lg: "40px", sm: "30px" },
+    px: { xs: 2 },
+    mb: { lg: "3rem", xs: "3rem" },
+    mx: { lg: 'auto' }, 
+    maxWidth: { lg: 'calc(100% - 28rem)', xs: '100%' }, 
+    justifyContent: { xs: 'center', sm: 'flex-start' }, 
+  }}
+>
+  {Array.isArray(cards) ? (
+    cards.map((card, index) => (
+      <Grid item xs={12} sm={6} md={6} lg={6} xl={6} key={index}>
+        <Paper
           sx={{
-            mt: { lg: "40px", sm: "30px" },
-            px: { xs: 2 },
-            mb: { lg: "3rem", xs: "3rem" },
-            mx: { lg: 'auto' }, 
-            maxWidth: { lg: 'calc(100% - 28rem)', xs: '100%' }, 
-            justifyContent:"center"
+            padding: "20px",
+            textAlign: "left",
+            width: { lg: "20rem", xs: "15rem" },
+            height: "7rem",
+            backgroundColor: "#EEEDEB",
+            border: "1px solid lightgray",
+            borderRadius: "8px",
+            marginBottom: { lg: "1.8rem", sm: "2rem" },
+            marginTop: "2.8rem",
           }}
         >
-          {Array.isArray(cards) ? (
-            cards.map((card, index) => (
-              <Grid item xs={12} sm={4} lg={12} md={6}key={index} >
-                <Paper
-                  sx={{
-                    padding: "20px",
-                    textAlign: "left",
-                    width: { lg: "20rem", xs: "15rem" },
-                    height: "7rem",
-                    backgroundColor: "#EEEDEB",
-                    border: "1px solid lightgray",
-                    borderRadius: "8px",
-                    marginBottom: { lg: "1.8rem", sm: "2rem" },
-                    marginTop: "2.8rem",
-                  }}
-                >
-                  <Typography
-                    style={{
-                      fontWeight: "bold",
-                      fontSize: "18px",
-                      marginTop: "-3%",
-                      marginBottom: "1%",
-                      fontFamily: "sans-serif",
-                    }}
-                  >
-                    {card.title}
-                  </Typography>
-                  <Divider
-                    style={{
-                      backgroundColor: "lightgray",
-                      marginLeft: "-6%",
-                      marginRight: "-6%",
-                    }}
-                  />
+          <Typography
+            style={{
+              fontWeight: "bold",
+              fontSize: "18px",
+              marginTop: "-3%",
+              marginBottom: "1%",
+              fontFamily: "sans-serif",
+            }}
+          >
+            {card.title}
+          </Typography>
+          <Divider
+            style={{
+              backgroundColor: "lightgray",
+              marginLeft: "-6%",
+              marginRight: "-6%",
+            }}
+          />
 
-                  <Typography
-                    style={{ marginTop: "4px", fontFamily: "sans-serif" }}
-                  >
-                    {card.description}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))
-          ) : (
-            <Grid item xs={12} sm={6}>
-              <Paper
-                style={{
-                  padding: "20px",
-                  textAlign: "left",
-                  width: "20rem",
-                  height: "7rem",
-                  backgroundColor: "#EEEDEB",
-                  border: "1px solid lightgray",
-                  borderRadius: "8px",
-                  marginBottom: "4.5rem",
-                  marginTop: "2.8rem",
-                }}
-              >
-                <Typography
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    marginTop: "-3%",
-                    marginBottom: "1%",
-                  }}
-                >
-                  {cards.title}
-                </Typography>
-                <Divider
-                  style={{
-                    backgroundColor: "lightgray",
-                    marginLeft: "-6%",
-                    marginRight: "-6%",
-                  }}
-                />
+          <Typography
+            style={{ marginTop: "4px", fontFamily: "sans-serif" }}
+          >
+            {card.description}
+          </Typography>
+        </Paper>
+      </Grid>
+    ))
+  ) : (
+    <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+      <Paper
+        style={{
+          padding: "20px",
+          textAlign: "left",
+          width: "20rem",
+          height: "7rem",
+          backgroundColor: "#EEEDEB",
+          border: "1px solid lightgray",
+          borderRadius: "8px",
+          marginBottom: "4.5rem",
+          marginTop: "2.8rem",
+        }}
+      >
+        <Typography
+          style={{
+            fontWeight: "bold",
+            fontSize: "18px",
+            marginTop: "-3%",
+            marginBottom: "1%",
+          }}
+        >
+          {cards.title}
+        </Typography>
+        <Divider
+          style={{
+            backgroundColor: "lightgray",
+            marginLeft: "-6%",
+            marginRight: "-6%",
+          }}
+        />
 
-                <Typography>{cards.description}</Typography>
-              </Paper>
-            </Grid>
-          )}
-        </Grid>
+        <Typography>{cards.description}</Typography>
+      </Paper>
+    </Grid>
+  )}
+</Grid>
+
+       
       </div>
 
-      {/* Footer Section */}
+ 
       <footer
         style={{ backgroundColor: "#000", color: "#fff", padding: "20px" }}
       >
